@@ -1,0 +1,17 @@
+{
+  "test1": {
+    "type": "countdown",
+    "config": {
+      "duration": 60
+    },
+    "actions": [
+      {
+        "type": "notification",
+        "params": {
+          "title": "Timer Alert",
+          "message": "Timer has ended for your live stream"
+        }
+      }
+    ]
+  }
+}
