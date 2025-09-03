@@ -1,5 +1,5 @@
 # eb-mk
-microkernel in rust with QEMU
+microkernel in rust with QEMU in 46 hours livestream...
 
 
 specs.
