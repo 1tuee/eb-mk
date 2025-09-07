@@ -1,6 +1,27 @@
 [package]
-name = "ebmk"
+name = "eb-mk"
 version = "0.1.0"
-edition = "2024"
+edition = "2024"  
+description = "rust microkernel"
 
 [dependencies]
+spin = "0.9"          #* simple lock primitives
+x86_64 = "0.14"       #* helpful types for paging, registers, etc.
+
+[profile.dev]
+panic = "abort"
+opt-level = 1
+
+[profile.release]
+panic = "abort"
+opt-level = "z"       #* smallest size
+lto = true            #* link time optimization
+codegen-units = 1     #* better optimization
+
+#* Target configuration for bare metal
+[[bin]]
+name = "eb-mk"
+path = "src/main.rs"
+
+[features]
+default = []
